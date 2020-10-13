@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Square & Cube</title>
+</head>
+<body>
+    <table cellpadding="10" id="table">
+        <tr>
+            <th>Number</th>
+            <th>Square</th>
+            <th>Cube</th>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        for(var i=0;i<=10;i++)
+        {
+            var s = Math.pow(i,2);
+            var c = Math.pow(i,3);
+            var tr = document.createElement("tr");
+            document.getElementById('table').appendChild(tr);
+            tr.innerHTML += '<td>' + i + '</td>';
+            tr.innerHTML += '<td>' + s + '</td>';
+            tr.innerHTML += '<td>' + c + '</td>';
+            
+        }
+    </script>   
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grow & Shrink</title>
+    <style>
+        body
+        {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <p id="text"></p>
+    </center>
+    <script type="text/javascript">
+        var time1 = setInterval(inTimer,50);
+        var fontsize = 5;
+        function inTimer()
+        {
+            fontsize ++;
+            document.getElementById("text").innerHTML = "TEXT GROWING";
+            document.getElementById("text").setAttribute("style","font-size:"+fontsize+"px; color:red;");
+            if(fontsize >= 100)
+            {
+                clearInterval(time1);
+                var time2 = setInterval(deTimer,50);
+            }
+        }
+        function deTimer()
+        {
+            fontsize --;
+            document.getElementById("text").innerHTML = "TEXT SHRINKING";
+            document.getElementById("text").setAttribute("style","font-size:"+fontsize+"px; color:blue;");
+            if(fontsize < 5)
+            {
+                clearInterval(time1);
+                document.getElementById("text").innerHTML = "THANK YOU";
+            }
+        }
+    </script>
+</body>
+</html>

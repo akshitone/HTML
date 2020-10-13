@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Country Capital</title>
+    <style>
+        span{
+            font-size: 20px;
+            margin-left: 20px;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <select id="menu">
+            <option value="India">INDIA</option>
+            <option value="America">USA</option>
+            <option value="Mexico">MEXICO</option>
+            <option value="Italy">ITALY</option>
+            <option value="NZ">NEW ZEALAND</option>
+        </select><span id="capital"></span>
+        <br><br>
+        <button onclick="capital()">Click here!</button><br>
+    </center>
+    <script type="text/javascript">
+        function capital()
+        {
+            var country = document.getElementById("menu").value;
+            if(country=="India")
+            {
+                document.getElementById("capital").innerHTML= "New Delhi" ;
+            }
+            if(country=="America")
+            {
+                document.getElementById("capital").innerHTML="New York";
+            }
+            if(country=="Mexico")
+            {
+                document.getElementById("capital").innerHTML="Mexico City";
+            }
+            if(country=="Italy")
+            {
+                document.getElementById("capital").innerHTML="Rome";
+            }
+            if(country=="NZ")
+            {
+                document.getElementById("capital").innerHTML="Wellington";
+            }
+        }
+    </script>
+</body>
+</html>

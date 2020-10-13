@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        table
+        {
+            text-align: center;
+        }
+        input[type="text"]
+        {
+            font-size: 25px;
+        }
+        input[type="button"]
+        {
+            padding: 20px;
+            font-size: 20px;
+        }
+        table
+        {
+            border: 3px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        function cal(val)
+        {
+            document.getElementById("textbox1").value += val;
+        }
+        function solve()
+        {
+            var x = document.getElementById("textbox1").value;
+            var y = eval(x);
+            document.getElementById("textbox1").value = y;
+        }
+        function clr()
+        {
+            document.getElementById("textbox1").value = "";
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <table cellpadding="10">
+        <tr>
+            <td colspan="4"><input type="text" id="textbox1" width="100%" style="padding: 15px;" disabled></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="9" onclick="cal(9)"></td>
+            <td><input type="button" value="8" onclick="cal(8)"></td>
+            <td><input type="button" value="7" onclick="cal(7)"></td>
+            <td><input type="button" value="+" onclick="cal('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="6" onclick="cal(6)"></td>
+            <td><input type="button" value="5" onclick="cal(5)"></td>
+            <td><input type="button" value="4" onclick="cal(4)"></td>
+            <td><input type="button" value="-" onclick="cal('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="3" onclick="cal(3)"></td>
+            <td><input type="button" value="2" onclick="cal(2)"></td>
+            <td><input type="button" value="1" onclick="cal(1)"></td>
+            <td><input type="button" value="*" onclick="cal('*')"></td>
+        </tr>
+        <tr>
+                <td><input type="button" value="C" onclick="clr()"></td>
+                <td><input type="button" value="0" onclick="cal(0)"></td>
+                <td><input type="button" value="/" onclick="cal('/')"></td>
+                <td><input type="button" value="=" onclick="solve()"></td>
+        </tr>
+    </table>
+    </center>
+</body>
+</html>

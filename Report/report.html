@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            h1, h3, h5{
+            font-weight: 700;
+            }
+            .chart{
+            margin: 20px;
+            }
+            .details{
+              width: auto;
+              padding: 10px;
+              border: 2px solid black;
+              border-radius: 20px;
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            p{
+              margin: 0px;
+            }
+        </style>
+        <title>Report</title>
+    </head>
+    <body style="background-color: #f6f6f6;">
+        <div class="card" style="padding: 20px;">
+          <div class="row">
+            <div class="col-10">
+              <h1>Career Path Advisory (CPA) Assessment </h1>
+            </div>
+        </div>
+        </div>
+        <div class="card chart">
+          <div class="card-header text-primary">
+            RIASEC Personality Wheel
+          </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                      <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                    </div>
+                    <div class="col-6">
+                      <div class="details">
+                        <h5>Primary personality</h5>
+                        <p>Enterprising</p>
+                      </div>
+                      <div class="details">
+                        <h5>Secondary personality</h5>
+                        <p>Artistic</p>
+                        <p>Realistic</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 100px;">
+                    <div class="col-6">
+                        <canvas id="bar-chart" width="800" height="250"></canvas>
+                    </div>
+                    <div class="col-6">
+                        <h3 class="text-danger">Your type of personality!</h3>
+                        <p>A chart is a graphical representation of data, in which "the data is represented by symbols, such as bars in a bar chart, lines in a line chart, or slices in a pie chart". A chart can represent tabular numeric data, functions or some kinds of quality structure and provides different info.</p>
+                        <p>Hello</p>
+                        <p>Hello</p>
+                        <p>Hello</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script>
+          window.onload = function () {
+          
+          var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            legend:{
+              cursor: "pointer",
+              itemclick: explodePie
+            },
+            data: [{
+              type: "pie",
+              showInLegend: true,
+              toolTipContent: "{name}: <strong>{y}%</strong>",
+              indexLabel: "{name} - {y}%",
+              dataPoints: [
+                { y: 29, name: "Realistic" },
+                { y: 29, name: "Investigative" },
+                { y: 36, name: "Artistic" },
+                { y: 29, name: "Social" },
+                { y: 50, name: "Enterprising" },
+                { y: 14, name: "Conventional"}
+              ]
+            }]
+          });
+          chart.render();
+          }
+          
+          function explodePie (e) {
+            if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+              e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+            } else {
+              e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+            }
+            e.chart.render();
+          
+          }
+          </script>
+          <script>
+            new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                  labels: ["Realistic", "Investigative", "Artistic", "Social", "Enterprising", "Conventional"],
+                  datasets: [{
+                    label: "Population (millions)",
+                    backgroundColor: ["#4F81BC", "#C0504E","#9BBB58","#23BFAA","#8064A1", "#4AACC5"],
+                    data: [29, 29, 36, 29, 50, 14]
+                    }
+                  ]
+                },
+                options: {
+                  legend: { display: false },
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number to words</title>
+</head>
+<body>
+    <center>
+        <form>
+            <input type="text" name="textbox1" id="textbox1">
+            <input type="button" name="btn" value="Click Here!" onclick="NumToWord()">
+        </form>
+        <p id="words" style="font-size: 20px;"></p>
+    </center>
+    <script type="text/javascript">
+        function NumToWord()
+        {
+            document.getElementById("words").innerHTML = " ";
+            var num = document.getElementById("textbox1").value;
+            var len = num.length;
+            var i;
+            if(isNaN(num))
+            {
+                document.getElementById("words").innerHTML = " Not a number ";
+            }
+            else if (num >= 1000)
+            {
+                document.getElementById("words").innerHTML = " Out of range ";
+            }
+            else
+            {
+                for(i=0;i<len;i++)
+                {
+                    if(num[i]==0)
+                    {
+                        document.getElementById("words").innerHTML += " zero ";
+                    }
+                    if(num[i]==1)
+                    {
+                        document.getElementById("words").innerHTML += " one ";
+                    }
+                    if(num[i]==2)
+                    {
+                        document.getElementById("words").innerHTML += " two ";
+                    }
+                    if(num[i]==3)
+                    {
+                        document.getElementById("words").innerHTML += " three ";
+                    }
+                    if(num[i]==4)
+                    {
+                        document.getElementById("words").innerHTML += " four ";
+                    }
+                    if(num[i]==5)
+                    {
+                        document.getElementById("words").innerHTML += " five ";
+                    }
+                    if(num[i]==6)
+                    {
+                        document.getElementById("words").innerHTML += " six ";
+                    }
+                    if(num[i]==7)
+                    {
+                        document.getElementById("words").innerHTML += " seven ";
+                    }
+                    if(num[i]==8)
+                    {
+                        document.getElementById("words").innerHTML += " eight ";
+                    }
+                    if(num[i]==9)
+                    {
+                        document.getElementById("words").innerHTML += " nine ";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

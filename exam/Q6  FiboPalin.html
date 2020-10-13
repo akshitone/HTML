@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fibonacci & Palindrome</title>
+</head>
+<body>
+    <center>
+        <form>
+            <input type="text" name="textbox1" id="textbox1"><br><br>
+            <input type="button" value="Fibonacci" name="btnfibo" onclick="fibo()">&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Palindrome" name="btnpalin" onclick="palin()">
+        </form>
+        <p id="output" style="font-size: 20px;"></p>
+    </center>
+    <script type="text/javascript">
+        function fibo()
+        {
+            document.getElementById("output").innerHTML = " ";
+            var n = document.getElementById("textbox1").value;
+            var a=0;
+            var b=1;
+            var c,i;
+            if(n == 0)
+            {
+                document.getElementById("output").innerHTML = "0";    
+            }
+            document.getElementById("output").innerHTML = a + " " + b + " ";
+            for(i=2;i<=n;i++)
+            {
+                c=a+b;
+                a=b;
+                b=c;
+                document.getElementById("output").innerHTML += b + " ";
+            }
+        }
+        function palin()
+        {
+            document.getElementById("output").innerHTML = " ";
+            var a=document.getElementById("textbox1").value;
+            b = a.split("").reverse().join("");
+            if(a==b)
+            {
+                document.getElementById("output").innerHTML = "Number is palindrome";
+            }
+            else
+            {
+                document.getElementById("output").innerHTML = "Number is not palindrome";
+            }
+        }
+    </script>
+</body>
+</html>

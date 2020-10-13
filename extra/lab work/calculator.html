@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            .inputtxtbox{
+                padding: 12px 20px;
+                width: 100%;
+            }
+            input{
+                padding: 10px 20px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="cal">
+            <table cellspacing="10px" cellpadding="10px" align="center">
+                <tr align="center">
+                    <td colspan="4"><input type="text" class="inputtxtbox" name="textbox1" id="textbox1" disabled></td>
+                </tr>
+                <tr align="center">
+                    <td><input type="button" value="9"onclick="btnval(9)"></td>
+                    <td><input type="button" value="8"onclick="btnval(8)"></td>
+                    <td><input type="button" value="7"onclick="btnval(7)"></td>
+                    <td><input type="button" value="+"onclick="btnval('+')"></td>
+                </tr>
+                <tr align="center">
+                    <td><input type="button" value="6"onclick="btnval(6)"></td>
+                    <td><input type="button" value="5"onclick="btnval(5)"></td>
+                    <td><input type="button" value="4"onclick="btnval(4)"></td>
+                    <td><input type="button" value="-"onclick="btnval('-')"></td>
+                </tr>
+                <tr align="center">
+                    <td><input type="button" value="3"onclick="btnval(3)"></td>
+                    <td><input type="button" value="2"onclick="btnval(2)"></td>
+                    <td><input type="button" value="1" onclick="btnval(1)"></td>
+                    <td><input type="button" value="*"onclick="btnval('*')"></td>
+                </tr>
+                <tr align="center">
+                    <td><input type="button" value="0"onclick="btnval(0)"></td>
+                    <td><input type="button" value="="onclick="btnequal()"></td>
+                    <td><input type="button" value="/"onclick="btnval('/')"></td>
+                    <td><input type="button" value="CE" onclick="btnclear()"></td>
+                </tr>
+            </table>
+        </form>
+        <script src="cal.js"></script>
+    </body>
+</html>
